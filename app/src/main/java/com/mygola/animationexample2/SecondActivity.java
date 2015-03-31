@@ -1,7 +1,8 @@
 package com.mygola.animationexample2;
 
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -22,6 +23,12 @@ public class SecondActivity extends ActionBarActivity {
         return true;
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Log.e("BACK PRESSED", "BACK OFF");
+        overridePendingTransition(R.anim.push_out_to_left, R.anim.push_out_to_left);
+    }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
