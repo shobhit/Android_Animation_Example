@@ -1,23 +1,30 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:orientation="vertical"
-    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+    tools:context=".MainActivity">
 
     <Button
+        android:id="@+id/clickme"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:text="Close In"
-        android:id="@+id/clickme"
         />
 
     <Button
+        android:id="@+id/clickme1"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:text="Slide me"
-        android:id="@+id/clickme1"
+        android:text="hold and Push out"
         />
 
+    <Button
+        android:id="@+id/clickme2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text="Slide me" />
 </LinearLayout>

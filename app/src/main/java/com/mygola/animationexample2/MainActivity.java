@@ -14,8 +14,9 @@ public class MainActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        overridePendingTransition(R.anim.pull_in_from_left, R.anim.hold);
+
         setContentView(R.layout.activity_main);
+
         Button button = (Button) findViewById(R.id.clickme);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -26,27 +27,30 @@ public class MainActivity extends ActionBarActivity {
             }
         });
 
+
         Button button1 = (Button) findViewById(R.id.clickme1);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this,SecondActivity.class);
-                //intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 startActivity(intent);
 
-                overridePendingTransition(R.anim.hold,R.anim.push_out_to_left);
+                overridePendingTransition(R.anim.pull_in_from_left, R.anim.push_out_to_left);
             }
         });
 
+        Button button2 = (Button) findViewById(R.id.clickme2);
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                startActivity(intent);
+                overridePendingTransition(R.anim.animation3, R.anim.animation4);
+            }
+        });
 
-    }
-    @Override
-    protected void onPause() {
-        // Whenever this activity is paused (i.e. looses focus because another activity is started etc)
-        // Override how this activity is animated out of view
-        // The new activity is kept still and this activity is pushed out to the left
-        overridePendingTransition(R.anim.hold, R.anim.push_out_to_left);
-        super.onPause();
     }
 
 
